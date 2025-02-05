@@ -1,7 +1,7 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Navbar from "./scenes/Global/Navbar";
-import { Dashboard } from "@mui/icons-material";
+import Dashboard from "./scenes/Dashboard";
 import { Route, Routes} from "react-router-dom";
 import Sidesection from "./scenes/Global/Sidesection";
 import { useState } from "react";
