@@ -2,7 +2,6 @@
 
 import { useState, createContext, useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
-import { Palette } from "@mui/icons-material";
 
 // colors designs use tailwind shades extension to get the color variations , ctrl+k ,ctrl+g on the color specified
 //Gray
@@ -142,7 +141,7 @@ export const themeSettings = (mode) => {
     return {
         palette:{
             mode:mode,
-            ...(mode === 'dark'
+            ...(mode === "dark"
                 ? {
                     primary: {
                         main: colors.primary[500],
@@ -171,14 +170,63 @@ export const themeSettings = (mode) => {
                         light:colors.grey[100],
                     },
                     background : {
-                        default:colors.primary[500],
+                        default: "#fcfcfc",
                     }
                 }
-            )
-        }
-    }
+            ),
+        },
+        typography: {
+            fontFamily:["Roboto Slab", "sans-serif"].join(","),
+            fontSize: 12,
+            h1: {
+                fontFamily:["Roboto Slab", "sans-serif"].join(","),
+                fontSize: 40,
+            },
+            h2: {
+                fontFamily:["Roboto Slab", "sans-serif"].join(","),
+                fontSize: 32,
+            },
+            h3: {
+                fontFamily:["Roboto Slab", "sans-serif"].join(","),
+                fontSize: 24,
+            },
+            h4: {
+                fontFamily:["Roboto Slab", "sans-serif"].join(","),
+                fontSize: 20,
+            },
+            h5: {
+                fontFamily:["Roboto Slab", "sans-serif"].join(","),
+                fontSize: 16,
+            },
+            h6: {
+                fontFamily:["Roboto Slab", "sans-serif"].join(","),
+                fontSize: 14,
+            },
+        },
+    };
+};
 
-}
+//context for color mode toggle trigger between dark and light mode
+export const ColorModeContext = createContext({
+    toggleColorMode:() => {
+    }
+});
+
+export const useMode = () => {
+    const [mode, setMode] = useState("dark"); //Default state mode dark
+
+    const colorMode = useMemo(
+        () => ({
+            toggleColorMode: () =>
+                setMode((prev)=>(prev === "light" ? "dark" : "light")),
+        }),
+        []
+    );
+
+    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
+    return [theme, colorMode];
+};
 
 
 
