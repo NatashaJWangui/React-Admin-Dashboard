@@ -3,8 +3,8 @@ import { tokens } from "../theme";
 export const mockDataTeam = [
   {
     id: 1,
-    name: "Natasha Wangui",
-    email: "natashawangui254@gmail.com",
+    name: "Claire Scott",
+    email: "clairescott@gmail.com",
     age: 25,
     phone: "(254)121-5454",
     access: "admin",
@@ -78,8 +78,8 @@ export const mockDataTeam = [
 export const mockDataContacts = [
   {
     id: 1,
-    name: "Natasha Wangui",
-    email: "natashawangui254@gmail.com",
+    name: "Claire Scott",
+    email: "clairescott@gmail.com",
     age: 25,
     phone: "(254)121-5454",
     address: "0912 Won Street, Alabama, SY 10001",
@@ -191,8 +191,8 @@ export const mockDataContacts = [
 export const mockDataInvoices = [
   {
     id: 1,
-    name: "Natasha Wangui",
-    email: "natashawangui254@gmail.com",
+    name: "Claire Scott",
+    email: "clairescott@gmail.com",
     cost: "21.24",
     phone: "(665)121-5454",
     date: "12/03/2024",
@@ -264,7 +264,7 @@ export const mockTransactions = [
   },
   {
     txId: "0315dsaa",
-    user: "natashawangui254",
+    user: "clairescott",
     date: "2024-08-01",
     cost: "133.45",
   },
