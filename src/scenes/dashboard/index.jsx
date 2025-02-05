@@ -2,7 +2,7 @@ import React from 'react'
 
 function Dashboard() {
   return (
-    <div>Dashboard Upcoming</div>
+    <div>Dashboard Work in Progress</div>
   )
 }
 
