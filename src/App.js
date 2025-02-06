@@ -1,11 +1,11 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Navbar from "./scenes/Global/Navbar";
-import Dashboard from "./scenes/Dashboard";
+import Dashboard from "./scenes/Dashboard/Dashboard";
 import { Route, Routes} from "react-router-dom";
 import Sidesection from "./scenes/Global/Sidesection";
 import { useState } from "react";
-// import Team from  "./scenes/Team";
+import Team from  "./scenes/Team/Team";
 // import Invoices from "./scenes/Invoices";
 // import Contacts from "./scenes/Contacts";
 // import Bar from "./scenes/Bar";
@@ -31,8 +31,8 @@ function App() {
           <Navbar setIsSidebar={setIsSidebar}/>
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
-            {/* <Route path="/Team" element={<Team />} />
-            <Route path="/Contacts" element={<Contacts />} />
+            <Route path="/Team" element={<Team />} />
+            {/* <Route path="/Contacts" element={<Contacts />} />
             <Route path="/Invoices" element={<Invoices />} />
             <Route path="/Form" element={<Form />} />
             <Route path="/Bar" element={<Bar />} />
