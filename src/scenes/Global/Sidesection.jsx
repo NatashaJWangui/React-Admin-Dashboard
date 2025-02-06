@@ -53,7 +53,7 @@ const Sidesection = () => {
           color: "#868dfb !important", 
         },
         "& .ps-menu-button.ps-active": {
-          color: "#6870fa !important", 
+          color: "#6870fa !important", //blue text hover
         },
         "& .ps-menu-icon": {
           backgroundColor: "transparent !important",
@@ -78,10 +78,10 @@ const Sidesection = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
+                <Typography variant="h3" color={colors.blueAccent[500]} >
                   NJW APP
                 </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                <IconButton onClick={() => setIsCollapsed(!isCollapsed)} sx={{color: colors.blueAccent[500],}}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
