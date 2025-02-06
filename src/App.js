@@ -6,8 +6,8 @@ import { Route, Routes} from "react-router-dom";
 import Sidesection from "./scenes/Global/Sidesection";
 import { useState } from "react";
 import Team from  "./scenes/Team/Team";
+import Contacts from "./scenes/Contacts/Contacts";
 // import Invoices from "./scenes/Invoices/Invoices";
-// import Contacts from "./scenes/Contacts/Contacts";
 // import Bar from "./scenes/Bar/Bar";
 // import Form from "./scenes/Form/Form";
 // import Line from "./scenes/Line/Line";
@@ -32,8 +32,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/Team" element={<Team />} />
-            {/* <Route path="/Contacts" element={<Contacts />} />
-            <Route path="/Invoices" element={<Invoices />} />
+            <Route path="/Contacts" element={<Contacts />} />
+            {/* <Route path="/Invoices" element={<Invoices />} />
             <Route path="/Form" element={<Form />} />
             <Route path="/Bar" element={<Bar />} />
             <Route path="/Pie" element={<Pie />} />
