@@ -6,14 +6,14 @@ import { Route, Routes} from "react-router-dom";
 import Sidesection from "./scenes/Global/Sidesection";
 import { useState } from "react";
 import Team from  "./scenes/Team/Team";
-// import Invoices from "./scenes/Invoices";
-// import Contacts from "./scenes/Contacts";
-// import Bar from "./scenes/Bar";
-// import Form from "./scenes/Form";
-// import Line from "./scenes/Line";
-// import Pie from "./scenes/Pie";
-// import FAQ from "./scenes/FAQ";
-// import Geography from "./scenes/Geography";
+// import Invoices from "./scenes/Invoices/Invoices";
+// import Contacts from "./scenes/Contacts/Contacts";
+// import Bar from "./scenes/Bar/Bar";
+// import Form from "./scenes/Form/Form";
+// import Line from "./scenes/Line/Line";
+// import Pie from "./scenes/Pie/Pie";
+// import FAQ from "./scenes/FAQ/FAQ";
+// import Geography from "./scenes/Geography/Geography";
 // import Calendar from "./scenes/Calendar/Calendar";
 
 

@@ -22,7 +22,18 @@ const Navbar = () => {
         backgroundColor={colors.primary[400]}
         borderRadius="3px"
       >
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search Here"/>
+        <InputBase sx={{ ml: 2, flex: 1,
+          "& .MuiInputBase-input": {
+            color: colors.grey[100], // Text color
+            fontWeight: "bold",
+            fontSize: theme.typography.h5,
+            "&::placeholder": {
+              color: colors.grey[300], // Placeholder text color
+              opacity: 1, // Ensure it's fully visible
+            },
+          },
+        }} 
+          placeholder="Search Here" />
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />
         </IconButton>

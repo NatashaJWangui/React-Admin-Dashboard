@@ -1,6 +1,6 @@
 import { tokens } from "../theme";
 
-export const mockDataTeam = [
+export const mockConstantTeam = [
   {
     id: 1,
     name: "Claire Scott",
@@ -31,7 +31,7 @@ export const mockDataTeam = [
     email: "tonystark@gmail.com",
     age: 20,
     phone: "(1)425-6742",
-    access: "admin",
+    access: "manager",
   },
   {
     id: 5,
@@ -43,8 +43,8 @@ export const mockDataTeam = [
   },
   {
     id: 6,
-    name: "Claire Arteta",
-    email: "clairearteta@gmail.com",
+    name: "Sherlock Arteta",
+    email: "sherlockarteta@gmail.com",
     age: 50,
     phone: "(124)545-6483",
     access: "manager",
@@ -67,15 +67,15 @@ export const mockDataTeam = [
   },
   {
     id: 9,
-    name: "Harvey Spectre",
-    email: "harveyspectre@gmail.com",
+    name: "Harvey Specter",
+    email: "harveyspecter@gmail.com",
     age: 40,
     phone: "(1)555-6239",
     access: "admin",
   },
 ];
 
-export const mockDataContacts = [
+export const mockConstantContacts = [
   {
     id: 1,
     name: "Claire Scott",
@@ -133,8 +133,8 @@ export const mockDataContacts = [
   },
   {
     id: 6,
-    name: "Claire Arteta",
-    email: "clairearteta@gmail.com",
+    name: "Sherlock Arteta",
+    email: "sherlockarteta@gmail.com",
     age: 50,
     phone: "(124)545-6483",
     address: "1234 Canvile Street, South Africa, NY 10001",
@@ -166,8 +166,8 @@ export const mockDataContacts = [
   },
   {
     id: 9,
-    name: "Harvey Spectre",
-    email: "harveyspectre@gmail.com",
+    name: "Harvey Specter",
+    email: "harveyspecter@gmail.com",
     age: 40,
     phone: "(1)555-6239",
     address: "51234 Avery Street, Ethiopia, ND 212412",
@@ -188,7 +188,7 @@ export const mockDataContacts = [
   },
 ];
 
-export const mockDataInvoices = [
+export const mockConstantInvoices = [
   {
     id: 1,
     name: "Claire Scott",
@@ -231,8 +231,8 @@ export const mockDataInvoices = [
   },
   {
     id: 6,
-    name: "Claire Arteta",
-    email: "clairearteta@gmail.com",
+    name: "Sherlock Arteta",
+    email: "sherlockarteta@gmail.com",
     cost: "63.12",
     phone: "(124)545-6483",
     date: "11/02/2025",
@@ -282,7 +282,7 @@ export const mockTransactions = [
   },
   {
     txId: "0a123sb",
-    user: "clairearteta",
+    user: "sherlockarteta",
     date: "2025-02-11",
     cost: "13.55",
   },

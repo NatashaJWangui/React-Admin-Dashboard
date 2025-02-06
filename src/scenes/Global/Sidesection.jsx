@@ -16,21 +16,22 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = ({ title, to, icon, selected, setSelected, variant ="h6" }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <MenuItem
-      active={selected === title}
-      style={{
-        color: colors.grey[100],
-      }}
-      onClick={() => setSelected(title)}
-      icon={icon}
-    >
-      <Typography>{title}</Typography>
-      <Link to={to} />
-    </MenuItem>
+    <Link to={to} style={{ textDecoration: 'none' }}> 
+      <MenuItem
+        active={selected === title}
+        style={{
+          color: colors.grey[100],
+        }}
+        onClick={() => setSelected(title)}
+        icon={icon}
+      >
+        <Typography variant={variant}>{title}</Typography>
+      </MenuItem>
+    </Link>
   );
 };
 
@@ -95,7 +96,7 @@ const Sidesection = () => {
                   alt="user-profile"
                   width="100px"
                   height="100px"
-                  src={`../../assets/user.png`}
+                  src={`../../assets/mylogoblack.png`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -108,8 +109,8 @@ const Sidesection = () => {
                 >
                   Claire Scott
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
-                  Admin
+                <Typography variant="h4" color={colors.greenAccent[500]}>
+                   Senior Admin
                 </Typography>
               </Box>
             </Box>
@@ -122,10 +123,11 @@ const Sidesection = () => {
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+
             />
 
             <Typography
-              variant="h6"
+              variant="h5"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
@@ -154,7 +156,7 @@ const Sidesection = () => {
             />
 
             <Typography
-              variant="h6"
+              variant="h5"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
@@ -183,7 +185,7 @@ const Sidesection = () => {
             />
 
             <Typography
-              variant="h6"
+              variant="h5"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >

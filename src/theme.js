@@ -195,9 +195,17 @@ export const themeSettings = (mode) => {
       },
       h5: {
         fontFamily: ["Roboto Slab", "sans-serif"].join(","),
-        fontSize: 16,
+        fontSize: 18,
       },
       h6: {
+        fontFamily: ["Roboto Slab", "sans-serif"].join(","),
+        fontSize: 16,
+      },
+      h7: {
+        fontFamily: ["Roboto Slab", "sans-serif"].join(","),
+        fontSize: 15,
+      },
+      h8: {
         fontFamily: ["Roboto Slab", "sans-serif"].join(","),
         fontSize: 14,
       },
