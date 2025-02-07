@@ -8,14 +8,14 @@ import Sidesection from "./components/nav/Sidesection";
 import { useState } from "react";
 import Team from "./components/Team";
 import Contacts from "./components/Contacts";
-// import Invoices from "./sections/Invoices";
-// import Bar from "./sections/charts/Bar";
-// import Form from "./sections/form/Form";
-// import Line from "./sections/charts/Line";
-// import Pie from "./sections/charts/Pie";
-// import FAQ from "./sections/FAQ";
-// import Geography from "./sections/Geography";
-// import Calendar from "./sections/Calendar";
+import Invoices from "./components/Invoices";
+import Form from "./components/Form";
+// import Bar from "./components/charts/Bar";
+// import Line from "./components/charts/Line";
+// import Pie from "./components/charts/Pie";
+// import FAQ from "./components/FAQ";
+// import Geography from "./components/Geography";
+// import Calendar from "./components/Calendar";
 
 
 function App() {
@@ -34,9 +34,9 @@ function App() {
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/Team" element={<Team />} />
             <Route path="/Contacts" element={<Contacts />} />
-            {/* <Route path="/Invoices" element={<Invoices />} />
+            <Route path="/Invoices" element={<Invoices />} />
             <Route path="/Form" element={<Form />} />
-            <Route path="/Bar" element={<Bar />} />
+            {/* <Route path="/Bar" element={<Bar />} />
             <Route path="/Pie" element={<Pie />} />
             <Route path="/Line" element={<Line />} />
             <Route path="/FAQ" element={<FAQ />} />

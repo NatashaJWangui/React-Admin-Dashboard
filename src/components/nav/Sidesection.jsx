@@ -20,8 +20,8 @@ const Item = ({ title, to, icon, selected, setSelected, variant ="h6" }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Link to={to} style={{ textDecoration: 'none' }}> 
       <MenuItem
+        component={<Link to={to} style={{ textDecoration: 'none' }}/>}
         active={selected === title}
         style={{
           color: colors.grey[100],
@@ -34,7 +34,6 @@ const Item = ({ title, to, icon, selected, setSelected, variant ="h6" }) => {
       >
         <Typography variant={variant}>{title}</Typography>
       </MenuItem>
-    </Link>
   );
 };
 
