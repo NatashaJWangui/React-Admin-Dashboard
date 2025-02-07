@@ -72,7 +72,7 @@ function Team() {
         },
         "& .MuiDataGrid-cell": {
           borderBottom:"none",
-          fontSize:theme.typography.h6,
+          fontSize:theme.typography.h7,
         },
         "& .name-column--cell": {
           color:colors.greenAccent[300],

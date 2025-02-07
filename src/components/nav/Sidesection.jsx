@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation to track route
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
@@ -16,17 +16,21 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-const Item = ({ title, to, icon, selected, setSelected, variant ="h6" }) => {
+const Item = ({ title, to, icon, selected, setSelected, variant = "h6" }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
-    <Link to={to} style={{ textDecoration: 'none' }}> 
+    <Link to={to} style={{ textDecoration: "none" }}>
       <MenuItem
         active={selected === title}
         style={{
           color: colors.grey[100],
         }}
-        onClick={() => setSelected(title)}
+        onClick={() => {
+          setSelected(title);
+          localStorage.setItem("selectedMenuItem", title); // Store in localStorage
+        }}
         icon={icon}
       >
         <Typography variant={variant}>{title}</Typography>
@@ -39,7 +43,20 @@ const Sidesection = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  const location = useLocation(); // Get current route
+
+  // Load selected item from localStorage or default to "Dashboard"
+  const [selected, setSelected] = useState(
+    localStorage.getItem("selectedMenuItem") || "Dashboard"
+  );
+
+  useEffect(() => {
+    // Sync selection with localStorage
+    const savedSelected = localStorage.getItem("selectedMenuItem");
+    if (savedSelected) {
+      setSelected(savedSelected);
+    }
+  }, [location.pathname]); // Update when route changes
 
   return (
     <Box
@@ -48,13 +65,13 @@ const Sidesection = () => {
           background: `${colors.primary[400]} !important`,
         },
         "& .ps-menu-button": {
-          padding: "5px 35px 5px 20px !important", 
+          padding: "5px 35px 5px 20px !important",
         },
         "& .ps-menu-button:hover": {
-          color: "#868dfb !important", 
+          color: "#868dfb !important",
         },
         "& .ps-menu-button.ps-active": {
-          color: "#6870fa !important", //blue text hover
+          color: "#6870fa !important",
         },
         "& .ps-menu-icon": {
           backgroundColor: "transparent !important",
@@ -79,15 +96,19 @@ const Sidesection = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.blueAccent[500]} >
+                <Typography variant="h3" color={colors.blueAccent[500]}>
                   NJW APP
                 </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)} sx={{color: colors.blueAccent[500],}}>
+                <IconButton
+                  onClick={() => setIsCollapsed(!isCollapsed)}
+                  sx={{ color: colors.blueAccent[500] }}
+                >
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
             )}
           </MenuItem>
+
           {/* User section */}
           {!isCollapsed && (
             <Box mb="25px">
@@ -110,7 +131,7 @@ const Sidesection = () => {
                   Claire Scott
                 </Typography>
                 <Typography variant="h4" color={colors.greenAccent[500]}>
-                   Senior Admin
+                  Senior Admin
                 </Typography>
               </Box>
             </Box>
@@ -123,7 +144,6 @@ const Sidesection = () => {
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-
             />
 
             <Typography
