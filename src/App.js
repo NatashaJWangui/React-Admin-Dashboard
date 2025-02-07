@@ -1,20 +1,21 @@
+import React from "react";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Navbar from "./scenes/Global/Navbar";
-import Dashboard from "./scenes/Dashboard/Dashboard";
+import Navbar from "./components/nav/Navbar";
+import Dashboard from "./components/dashboard/Dashboard";
 import { Route, Routes} from "react-router-dom";
-import Sidesection from "./scenes/Global/Sidesection";
+import Sidesection from "./components/nav/Sidesection";
 import { useState } from "react";
-import Team from  "./scenes/Team/Team";
-import Contacts from "./scenes/Contacts/Contacts";
-// import Invoices from "./scenes/Invoices/Invoices";
-// import Bar from "./scenes/Bar/Bar";
-// import Form from "./scenes/Form/Form";
-// import Line from "./scenes/Line/Line";
-// import Pie from "./scenes/Pie/Pie";
-// import FAQ from "./scenes/FAQ/FAQ";
-// import Geography from "./scenes/Geography/Geography";
-// import Calendar from "./scenes/Calendar/Calendar";
+import Team from "./components/Team";
+import Contacts from "./components/Contacts";
+// import Invoices from "./sections/Invoices";
+// import Bar from "./sections/charts/Bar";
+// import Form from "./sections/form/Form";
+// import Line from "./sections/charts/Line";
+// import Pie from "./sections/charts/Pie";
+// import FAQ from "./sections/FAQ";
+// import Geography from "./sections/Geography";
+// import Calendar from "./sections/Calendar";
 
 
 function App() {

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { tokens } from "../../theme";
-import { mockConstantTeam } from "../../constants/mockConstant";
+import { tokens } from '../theme';
+import { mockConstantTeam } from '../constants/mockConstant';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
-import Header from "../../components/Header";
-
+import Header from './Header';
 
 function Team() {
   const theme = useTheme();
@@ -87,7 +86,23 @@ function Team() {
           backgroundColor: colors.primary[400],
         },
         "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[200]} !important`,
+          color: `${colors.greenAccent[200]} !important`,
+        },
+        // Footer Rows Per page
+        "& .MuiTablePagination-selectLabel" : {
+          fontSize:theme.typography.h7,
+        },
+        // Footer page count
+        "& .MuiInputBase-root" : {
+          fontSize:theme.typography.h7,
+        },
+        //Footer Pagination
+        "& .MuiTablePagination-displayedRows" :{
+          fontSize:theme.typography.h7,
+        },
+        //Footer Pagination Actions
+        "& .MuiTablePagination-actions" :{
+          fontSize:theme.typography.h7,
         },
         // "& .MuiDataGrid-footerContainer":{
         //   borderTop:"none",
