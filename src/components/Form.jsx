@@ -28,14 +28,15 @@ function Form() {
     address2: yup.string().required("required"),
   });
   //Handle Form Submission
-  const handleFormSubmit = (values) => {
-    console.log(values)
+  const handleFormSubmit = (values, {resetForm}) => {
+    console.log(values);
+    resetForm(); // Reset form to initial values
   }
   return (
     <Box m="20px">
       <Header title="USER" subtitle="Create a New User"/>
       <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={userSchema}>
-        {({values, errors, touched, handleBlur, handleChange, handleSubmit}) => (
+        {({values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm}) => (
           <form onSubmit={handleSubmit}>
             <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" sx={{
               "& > div": {gridColumn: isNonMobile ? undefined : "span 4"}, 
@@ -53,7 +54,7 @@ function Form() {
                 error={!!touched.firstName && !!errors.firstName} 
                 helperText={touched.firstName && errors.firstName} 
                 sx={{ gridColumn:"span 2"}}
-                slotProps={{ inputLabel: { style: {fontSize: "1.0rem" } } }}// Adjust label size
+                slotProps={{ inputLabel: { style:{fontSize: "1.0rem"}},input: { style: { fontSize: "1.2rem" } } }}
               />
               <TextField 
                 fullWidth 
@@ -67,7 +68,7 @@ function Form() {
                 error={!!touched.lastName && !!errors.lastName} 
                 helperText={touched.lastName && errors.lastName} 
                 sx={{ gridColumn:"span 2"}}
-                slotProps={{ inputLabel: { style: {fontSize: "1.0rem" } } }}// Adjust label size
+                slotProps={{ inputLabel: { style:{fontSize: "1.0rem"}},input: { style: { fontSize: "1.2rem" } } }}// Adjust label size
               />
               <TextField
                 fullWidth 
@@ -81,7 +82,7 @@ function Form() {
                 error={!!touched.email && !!errors.email} 
                 helperText={touched.email && errors.email} 
                 sx={{ gridColumn:"span 4"}}
-                slotProps={{ inputLabel: { style: {fontSize: "1.0rem" } } }}// Adjust label size
+                slotProps={{ inputLabel: { style:{fontSize: "1.0rem"}},input: { style: { fontSize: "1.2rem" } } }}
               />
               <TextField 
                 fullWidth 
@@ -95,7 +96,7 @@ function Form() {
                 error={!!touched.contact && !!errors.contact} 
                 helperText={touched.contact && errors.contact} 
                 sx={{ gridColumn:"span 4"}}
-                slotProps={{ inputLabel: { style: {fontSize: "1.0rem" } } }}// Adjust label size
+                slotProps={{ inputLabel: { style:{fontSize: "1.0rem"}},input: { style: { fontSize: "1.2rem" } } }}
               />
               <TextField 
                 fullWidth 
@@ -109,7 +110,7 @@ function Form() {
                 error={!!touched.address1 && !!errors.address1} 
                 helperText={touched.address1 && errors.address1} 
                 sx={{ gridColumn:"span 2"}}
-                slotProps={{ inputLabel: { style: {fontSize: "1.0rem" } } }}// Adjust label size
+                slotProps={{ inputLabel: { style:{fontSize: "1.0rem"}},input: { style: { fontSize: "1.2rem" } } }}
               />
               <TextField 
                 fullWidth 
@@ -123,7 +124,7 @@ function Form() {
                 error={!!touched.address2 && !!errors.address2} 
                 helperText={touched.address2 && errors.address2} 
                 sx={{ gridColumn:"span 2"}}
-                slotProps={{ inputLabel: { style: {fontSize: "1.0rem" } } }}// Adjust label size
+                slotProps={{ inputLabel: { style:{fontSize: "1.0rem"}},input: { style: { fontSize: "1.2rem" } } }}
               />
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
