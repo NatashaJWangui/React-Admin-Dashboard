@@ -43,7 +43,7 @@ const Navbar = () => {
       <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
-            <DarkModeOutlinedIcon />
+            <DarkModeOutlinedIcon  />
           ) : (
             <LightModeOutlinedIcon />
           )}

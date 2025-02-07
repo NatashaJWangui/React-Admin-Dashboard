@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link, useLocation } from "react-router-dom"; // Import useLocation to track route
+import { Link, useLocation } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
@@ -16,12 +16,11 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-const Item = ({ title, to, icon, selected, setSelected, variant = "h6" }) => {
+const Item = ({ title, to, icon, selected, setSelected, variant ="h6" }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   return (
-    <Link to={to} style={{ textDecoration: "none" }}>
+    <Link to={to} style={{ textDecoration: 'none' }}> 
       <MenuItem
         active={selected === title}
         style={{
@@ -51,27 +50,57 @@ const Sidesection = () => {
   );
 
   useEffect(() => {
-    // Sync selection with localStorage
     const savedSelected = localStorage.getItem("selectedMenuItem");
-    if (savedSelected) {
+  
+    // Get the current route from location.pathname
+    const currentPath = location.pathname;
+  
+    // Define a mapping from paths to menu titles
+    const pathToTitle = {
+      "/": "Dashboard",
+      "/Team": "Manage Team",
+      "/Contacts": "Contact Information",
+      "/Invoices": "Invoices",
+      "/Form": "Profile Form",
+      "/Calendar": "Calendar",
+      "/FAQ": "FAQ",
+      "/Bar": "Bar Chart",
+      "/Pie": "Pie Chart",
+      "/Line": "Line Chart",
+      "/Geography": "Geography Chart",
+    };
+  
+    // If there's a saved selection, use it, but sync with the current path
+    if (savedSelected && pathToTitle[currentPath] === savedSelected) {
       setSelected(savedSelected);
+    } else {
+      // If the app restarted and the path doesn't match, use the correct mapping
+      const defaultSelection = pathToTitle[currentPath] || "Dashboard";
+      setSelected(defaultSelection);
+      localStorage.setItem("selectedMenuItem", defaultSelection);
     }
-  }, [location.pathname]); // Update when route changes
+  }, [location.pathname]); // Run whenever the route changes
 
   return (
     <Box
       sx={{
         "& .ps-sidebar-container": {
           background: `${colors.primary[400]} !important`,
+          width: isCollapsed ? "80px" : "280px", // Adjust width based on state
+          transition: "width 0.3s ease", // Smooth transition effect
+        },
+        "& .ps-sidebar-root":{
+          width: isCollapsed ? "80px" : "280px", // Adjust width based on state
+          transition: "width 0.3s ease", // Smooth transition effect
         },
         "& .ps-menu-button": {
-          padding: "5px 35px 5px 20px !important",
+          padding: "5px 35px 5px 20px 5px 10px !important", 
         },
         "& .ps-menu-button:hover": {
-          color: "#868dfb !important",
+          color: "#868dfb !important", 
         },
         "& .ps-menu-button.ps-active": {
-          color: "#6870fa !important",
+          color: "#6870fa !important", //blue text hover
         },
         "& .ps-menu-icon": {
           backgroundColor: "transparent !important",
@@ -96,19 +125,15 @@ const Sidesection = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.blueAccent[500]}>
+                <Typography variant="h3" color={colors.blueAccent[500]} >
                   NJW APP
                 </Typography>
-                <IconButton
-                  onClick={() => setIsCollapsed(!isCollapsed)}
-                  sx={{ color: colors.blueAccent[500] }}
-                >
+                <IconButton onClick={() => setIsCollapsed(!isCollapsed)} sx={{color: colors.blueAccent[500],}}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
             )}
           </MenuItem>
-
           {/* User section */}
           {!isCollapsed && (
             <Box mb="25px">
@@ -131,7 +156,7 @@ const Sidesection = () => {
                   Claire Scott
                 </Typography>
                 <Typography variant="h4" color={colors.greenAccent[500]}>
-                  Senior Admin
+                   Senior Admin
                 </Typography>
               </Box>
             </Box>
@@ -144,6 +169,7 @@ const Sidesection = () => {
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+
             />
 
             <Typography
@@ -161,14 +187,14 @@ const Sidesection = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
+              title="Contact Information"
               to="/Contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
+              title="Invoices"
               to="/Invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
@@ -197,7 +223,7 @@ const Sidesection = () => {
               setSelected={setSelected}
             />
             <Item
-              title="FAQ Page"
+              title="FAQ"
               to="/FAQ"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
