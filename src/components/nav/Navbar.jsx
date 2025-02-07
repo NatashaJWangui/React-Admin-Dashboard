@@ -43,19 +43,19 @@ const Navbar = () => {
       <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
-            <DarkModeOutlinedIcon  />
+            <DarkModeOutlinedIcon sx={{ fontSize: "24px" }} />
           ) : (
-            <LightModeOutlinedIcon />
+            <LightModeOutlinedIcon sx={{ fontSize: "24px" }} />
           )}
         </IconButton>
         <IconButton>
-          <NotificationsOutlinedIcon />
+          <NotificationsOutlinedIcon sx={{ fontSize: "24px" }}/>
         </IconButton>
         <IconButton>
-          <SettingsOutlinedIcon />
+          <SettingsOutlinedIcon sx={{ fontSize: "24px" }}/>
         </IconButton>
         <IconButton>
-          <PersonOutlinedIcon />
+          <PersonOutlinedIcon sx={{ fontSize: "24px" }} />
         </IconButton>
       </Box>
     </Box>
