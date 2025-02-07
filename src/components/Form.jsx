@@ -1,6 +1,6 @@
-import React from 'react';
+import { useState, React } from 'react';
 import { Formik } from 'formik';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, TextField, Snackbar, Alert } from '@mui/material';
 import * as yup from "yup";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Header from './Header';
@@ -9,6 +9,7 @@ import Header from './Header';
 
 function Form() {
   const isNonMobile = useMediaQuery("(min-width:600px)");
+  const [openSnackbar, setOpenSnackbar] = useState(false); 
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -31,12 +32,28 @@ function Form() {
   const handleFormSubmit = (values, {resetForm}) => {
     console.log(values);
     resetForm(); // Reset form to initial values
+    setOpenSnackbar(true); // Show success notification
   }
   return (
     <Box m="20px">
       <Header title="USER" subtitle="Create a New User"/>
+      {/* Snackbar Pop-Up Notifications */}
+      <Snackbar 
+        open={openSnackbar} 
+        autoHideDuration={3000} 
+        onClose={() => setOpenSnackbar(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <Alert 
+          onClose={() => setOpenSnackbar(false)} 
+          severity="success" 
+          sx={{ width: "100%" ,fontSize: "1.0rem" }}
+        >
+          User created successfully!
+        </Alert>
+      </Snackbar>
       <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={userSchema}>
-        {({values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm}) => (
+        {({values, errors, touched, handleBlur, handleChange, handleSubmit}) => (
           <form onSubmit={handleSubmit}>
             <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" sx={{
               "& > div": {gridColumn: isNonMobile ? undefined : "span 4"}, 
