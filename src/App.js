@@ -11,10 +11,10 @@ import Contacts from "./components/Contacts";
 import Invoices from "./components/Invoices";
 import Form from "./components/Form";
 import Calendar from "./components/Calendar";
+import FAQ from "./components/FAQ";
 // import Bar from "./components/charts/Bar";
 // import Line from "./components/charts/Line";
 // import Pie from "./components/charts/Pie";
-// import FAQ from "./components/FAQ";
 // import Geography from "./components/Geography";
 
 
@@ -38,10 +38,10 @@ function App() {
             <Route path="/Invoices" element={<Invoices />} />
             <Route path="/Form" element={<Form />} />
             <Route path="/Calendar" element={<Calendar />} />
+            <Route path="/FAQ" element={<FAQ />} />
             {/* <Route path="/Bar" element={<Bar />} />
             <Route path="/Pie" element={<Pie />} />
             <Route path="/Line" element={<Line />} />
-            <Route path="/FAQ" element={<FAQ />} />
             <Route path="/Geography" element={<Geography />} /> */}
           </Routes>
         </main>
