@@ -431,7 +431,7 @@ export const mockLineData = [
         y: 88,
       },
       {
-        x: "moto",
+        x: "lorry",
         y: 232,
       },
       {
@@ -485,7 +485,7 @@ export const mockLineData = [
         y: 33,
       },
       {
-        x: "moto",
+        x: "lorry",
         y: 189,
       },
       {
@@ -539,7 +539,7 @@ export const mockLineData = [
         y: 189,
       },
       {
-        x: "moto",
+        x: "lorry",
         y: 152,
       },
       {

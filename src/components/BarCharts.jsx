@@ -18,11 +18,14 @@ function BarCharts({isDashboard=false}) {
                 stroke:colors.grey[100]
               }
             },
+            //Labels
             legend:{
               text:{
-                fill:colors.grey[100]
+                fill:colors.grey[100],
+                fontSize: 18,
               }
             },
+            // X and Y labels
             ticks:{
               line:{
                 stroke:colors.grey[100],
@@ -30,12 +33,15 @@ function BarCharts({isDashboard=false}) {
               },
               text:{
                 fill:colors.grey[100],
+                fontSize: 14,
               }
             }
           },
+          //Keys
           legends:{
             text:{
-              fill:colors.grey[100]
+              fill:colors.grey[100],
+              fontSize: 16,
             }
           }
         }}

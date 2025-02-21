@@ -6,7 +6,7 @@ import Header from '../Header'
 function Bar() {
   return (
     <Box m="20px">
-      <Header title="Bar Chart" subtitle="Simple Bar Chart"/>
+      <Header title="Bar Chart" subtitle="A Simple Bar Chart"/>
       <Box height="75vh" >
         <BarCharts/>
       </Box>
