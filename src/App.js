@@ -15,7 +15,7 @@ import FAQ from "./components/FAQ";
 import Bar from "./components/charts/Bar";
 import Pie from "./components/charts/Pie";
 import Line from "./components/charts/Line";
-// import Geography from "./components/Geography";
+import Geography from "./components/charts/Geography";
 
 
 
@@ -42,7 +42,7 @@ function App() {
             <Route path="/Bar" element={<Bar />} />
             <Route path="/Pie" element={<Pie />} />
             <Route path="/Line" element={<Line />} />
-            {/* <Route path="/Geography" element={<Geography />} /> */}
+            <Route path="/Geography" element={<Geography />} />
           </Routes>
         </main>
       </div>
