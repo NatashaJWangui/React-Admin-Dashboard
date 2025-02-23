@@ -10,7 +10,6 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TrafficIcon from '@mui/icons-material/Traffic';
 import LineCharts from '../LineCharts';
 import BarCharts from '../BarCharts';
-import PieCharts from '../PieCharts';
 import GeographyCharts from '../GeographyCharts';
 import StatisticsBox from '../StatisticsBox';
 import ProgressCircle from '../ProgressCircle';
