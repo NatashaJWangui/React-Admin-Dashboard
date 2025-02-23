@@ -33,7 +33,7 @@ Well-structured components for easy customization.
 ### 1️⃣ Clone the repository
 
 ```sh
-git clone https://github.com/your-username/react-admin-dashboard.git
+git clone https://github.com/NatashaJWangui/React-Admin-Dashboard.git
 cd react-admin-dashboard
 ```
 
