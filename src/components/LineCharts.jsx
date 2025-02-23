@@ -55,8 +55,8 @@ function LineCharts({isDashboard=false}) {
         xScale={{ type: 'point' }}
         yScale={{
             type: 'linear',
-            min: 'auto',
-            max: 'auto',
+            min: 0,
+            max: 600,
             stacked: true,
             reverse: false
         }}
@@ -80,7 +80,8 @@ function LineCharts({isDashboard=false}) {
             legend: isDashboard ? undefined : 'count',
             legendOffset: -56,
             legendPosition: 'middle',
-            truncateTickAt: 0
+            truncateTickAt: 0,
+            tickValues: [0, 100, 200, 300, 400, 500, 600]
         }}
         enableGridX={false}
         enableGridY={false}

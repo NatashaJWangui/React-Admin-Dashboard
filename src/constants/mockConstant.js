@@ -259,49 +259,49 @@ export const mockTransactions = [
   {
     txId: "01e4dsa",
     user: "janedoe",
-    date: "2024-09-01",
+    date: "09-02-2025",
     cost: "43.95",
   },
   {
     txId: "0315dsaa",
     user: "clairescott",
-    date: "2024-08-01",
+    date: "28-01-2025",
     cost: "133.45",
   },
   {
     txId: "01e4dsa",
     user: "arnoldlannister",
-    date: "2025-01-04",
+    date: "04-01-2025",
     cost: "43.95",
   },
   {
     txId: "51034szv",
     user: "tonystark",
-    date: "2024-11-05",
+    date: "11-05-2024",
     cost: "200.95",
   },
   {
     txId: "0a123sb",
     user: "sherlockarteta",
-    date: "2025-02-11",
+    date: "11-02-2025",
     cost: "13.55",
   },
   {
     txId: "01e4dsa",
     user: "juliemyst",
-    date: "2024-09-01",
+    date: "01-09-2024",
     cost: "43.95",
   },
   {
     txId: "120s51a",
     user: "rossinifrance",
-    date: "2024-04-15",
+    date: "15-04-2024",
     cost: "24.20",
   },
   {
     txId: "0315dsaa",
     user: "juliemyst",
-    date: "2025-01-08",
+    date: "08-01-2025",
     cost: "133.45",
   },
 ];
@@ -446,10 +446,6 @@ export const mockLineData = [
         x: "skateboard",
         y: 35,
       },
-      {
-        x: "others",
-        y: 14,
-      },
     ],
   },
   {
@@ -500,10 +496,6 @@ export const mockLineData = [
         x: "skateboard",
         y: 299,
       },
-      {
-        x: "others",
-        y: 251,
-      },
     ],
   },
   {
@@ -553,10 +545,6 @@ export const mockLineData = [
       {
         x: "skateboard",
         y: 107,
-      },
-      {
-        x: "others",
-        y: 170,
       },
     ],
   },
